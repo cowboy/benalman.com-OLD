@@ -19,7 +19,7 @@ var Index = require('./lib/page/index').Index;
 var src = '../benalman.com-content/new';
 var indices = fs.readdirSync(src).map(function(dirname) {
   // console.log(dirname);
-  var abspath = path.resolve(src, dirname);
+  var abspath = path.resolve(src, dirname, 'index.md');
   var index = new Index(abspath);
   var dest = path.resolve('./build', dirname + '.html');
 
