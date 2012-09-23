@@ -1,0 +1,20 @@
+{
+  "name": "benalman.com",
+  "version": "0.1.0",
+  "description": "Website?",
+  "main": "index.js",
+  "dependencies": {
+    "github-flavored-markdown": "~1.0.1",
+    "js-yaml": "~1.0.2",
+    "gitteh": "~0.1.0",
+    "ejs": "~0.8.3",
+    "dateformat": "~1.0.2-1.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD"
+}

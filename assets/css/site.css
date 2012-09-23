@@ -1,0 +1,9 @@
+#content {
+  width: 600px;
+}
+
+.highlight {
+  border: 1px solid #ccc;
+  background: #eee;
+  padding: 0 0.5em;
+}
