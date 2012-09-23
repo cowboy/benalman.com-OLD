@@ -14,26 +14,26 @@ var path = require('path');
 var ejs = require('ejs');
 var dateformat = require('dateformat');
 
-var Page = require('./lib/page').Page;
+var Index = require('./lib/page/index').Index;
 
 var src = '../benalman.com-content/new';
-var pages = fs.readdirSync(src).map(function(dirname) {
+var indices = fs.readdirSync(src).map(function(dirname) {
   // console.log(dirname);
   var abspath = path.resolve(src, dirname);
-  var page = new Page(abspath);
+  var index = new Index(abspath);
   var dest = path.resolve('./build', dirname + '.html');
 
-  var options = Object.create(page);
+  var options = Object.create(index);
   options.filename = './views/page.js';
   var html = ejs.render('<% include page %>', options);
   fs.writeFileSync(dest, html);
 
-  return {href: dirname + '.html', meta: page.meta};
+  return {href: dirname + '.html', meta: index.meta};
 });
 
 var options = {
   dateformat: dateformat,
-  pages: pages,
+  pages: indices,
   filename: './views/index.js'
 };
 var html = ejs.render('<% include index %>', options);
