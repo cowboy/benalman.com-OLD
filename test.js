@@ -29,7 +29,7 @@ var indices = fs.readdirSync(src).map(function(dirname) {
   fs.writeFileSync(dest, html);
 
   return {href: dirname + '.html', meta: index.meta};
-});
+}).reverse();
 
 var options = {
   dateformat: dateformat,
